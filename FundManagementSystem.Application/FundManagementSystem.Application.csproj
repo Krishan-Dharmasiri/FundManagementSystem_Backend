@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.8.1" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.1" />
+    <PackageReference Include="MediatR" Version="12.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FundManagementSystem.Domain\FundManagementSystem.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Features\Clients\Commands\CreateClient\" />
+    <Folder Include="Features\Clients\Commands\DeleteClient\" />
+    <Folder Include="Features\Clients\Commands\UpdateClient\" />
+    <Folder Include="Features\Clients\Queries\GetClientsList\" />
+    <Folder Include="Features\Clients\Queries\GetClientDetail\" />
+    <Folder Include="Features\Reports\" />
+  </ItemGroup>
+
+</Project>

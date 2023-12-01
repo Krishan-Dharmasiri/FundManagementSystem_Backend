@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F6CB79DD-33C7-4A1C-8A60-EC43EB58C15F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{CA1CCE4A-8F79-4F29-8985-6D50A8653DBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{55F06B7A-AE88-4DC5-991C-FF4C39FA15E0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{FA9D4AF2-4DEA-4A93-8568-8B73DBDEEB58}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3F5D2310-82A7-47B5-87BF-81B3E9E86C01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagementSystem.Domain", "FundManagementSystem.Domain\FundManagementSystem.Domain.csproj", "{03201252-76C4-4358-85EE-5A4820354A6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagementSystem.Application", "FundManagementSystem.Application\FundManagementSystem.Application.csproj", "{491CDBE3-4651-45DB-A98B-C05A92464EB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03201252-76C4-4358-85EE-5A4820354A6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03201252-76C4-4358-85EE-5A4820354A6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03201252-76C4-4358-85EE-5A4820354A6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03201252-76C4-4358-85EE-5A4820354A6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CA1CCE4A-8F79-4F29-8985-6D50A8653DBA} = {483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}
+		{55F06B7A-AE88-4DC5-991C-FF4C39FA15E0} = {483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}
+		{FA9D4AF2-4DEA-4A93-8568-8B73DBDEEB58} = {483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}
+		{3F5D2310-82A7-47B5-87BF-81B3E9E86C01} = {483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}
+		{03201252-76C4-4358-85EE-5A4820354A6E} = {55F06B7A-AE88-4DC5-991C-FF4C39FA15E0}
+		{491CDBE3-4651-45DB-A98B-C05A92464EB8} = {55F06B7A-AE88-4DC5-991C-FF4C39FA15E0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FD82ABF3-B5E6-49B7-874D-4E047F793A61}
+	EndGlobalSection
+EndGlobal
