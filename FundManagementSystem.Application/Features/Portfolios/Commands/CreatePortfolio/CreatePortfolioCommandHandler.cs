@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
+using FundManagementSystem.Application.Contracts.Infrastructure;
 using FundManagementSystem.Application.Contracts.Persistence;
 using FundManagementSystem.Application.Exceptions;
+using FundManagementSystem.Application.Models.Mail;
 using FundManagementSystem.Domain.Entities;
 using MediatR;
 using System;
@@ -15,11 +17,14 @@ namespace FundManagementSystem.Application.Features.Portfolios.Commands.CreatePo
     {
         private readonly IPortfolioRepository _portfolioRepository;
         private readonly IMapper _mapper;
+        private readonly IEmailService _emailService;
 
-        public CreatePortfolioCommandHandler(IPortfolioRepository portfolioRepository, IMapper mapper)
+        public CreatePortfolioCommandHandler(IPortfolioRepository portfolioRepository, IMapper mapper,
+                IEmailService emailService)
         {
             _portfolioRepository = portfolioRepository;
             _mapper = mapper;
+            _emailService = emailService;
         }
 
         public async Task<CreatePortfolioCommandResponse> Handle(CreatePortfolioCommand request, CancellationToken cancellationToken)
@@ -42,6 +47,23 @@ namespace FundManagementSystem.Application.Features.Portfolios.Commands.CreatePo
                 var portfolio = _mapper.Map<Portfolio>(request);
                 portfolio = await _portfolioRepository.AddAsync(portfolio);
                 createPortfolioCommandResponse.Portfolio = _mapper.Map<CreatePortfolioDto>(portfolio);
+
+                // Send the email after successfull portfolio creation
+                var email = new Email()
+                {
+                    To = "krishanthadh@gmail.com",
+                    Subject = "A new portfolio was creadted",
+                    Body = $"A new portfolio was created : {request}"
+                };
+
+                try
+                {
+                    await _emailService.SendEmail(email);
+                }
+                catch (Exception ex)
+                {
+                    // this should not stop the API from doing else so this can be logged
+                }
             }
 
             return createPortfolioCommandResponse;
