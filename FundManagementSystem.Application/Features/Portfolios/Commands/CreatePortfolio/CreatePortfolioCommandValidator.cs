@@ -47,7 +47,7 @@ namespace FundManagementSystem.Application.Features.Portfolios.Commands.CreatePo
 
         private async Task<bool> PortfolioNameAndTypeUnique(CreatePortfolioCommand e, CancellationToken token)
         {
-            return !(await _portfolioRepository.IsPortfolioNameAndTypeUnique(e.Name, e.Type));
+            return await _portfolioRepository.IsPortfolioNameAndTypeUnique(e.Name, e.Type);
         }
     }
 }

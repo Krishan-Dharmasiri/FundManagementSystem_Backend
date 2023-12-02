@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{3F5D2310-82A7-47B5-87BF-81B3E9E86C01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagementSystem.Domain", "FundManagementSystem.Domain\FundManagementSystem.Domain.csproj", "{03201252-76C4-4358-85EE-5A4820354A6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundManagementSystem.Domain", "FundManagementSystem.Domain\FundManagementSystem.Domain.csproj", "{03201252-76C4-4358-85EE-5A4820354A6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagementSystem.Application", "FundManagementSystem.Application\FundManagementSystem.Application.csproj", "{491CDBE3-4651-45DB-A98B-C05A92464EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FundManagementSystem.Application", "FundManagementSystem.Application\FundManagementSystem.Application.csproj", "{491CDBE3-4651-45DB-A98B-C05A92464EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FundManagementSystem.Persistence", "FundManagementSystem.Persistence\FundManagementSystem.Persistence.csproj", "{59609EA6-929A-4783-A3E0-8EA63091AC61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{491CDBE3-4651-45DB-A98B-C05A92464EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59609EA6-929A-4783-A3E0-8EA63091AC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59609EA6-929A-4783-A3E0-8EA63091AC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59609EA6-929A-4783-A3E0-8EA63091AC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59609EA6-929A-4783-A3E0-8EA63091AC61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{3F5D2310-82A7-47B5-87BF-81B3E9E86C01} = {483C979D-0BCC-4BE7-BB45-6159A9B3B4E2}
 		{03201252-76C4-4358-85EE-5A4820354A6E} = {55F06B7A-AE88-4DC5-991C-FF4C39FA15E0}
 		{491CDBE3-4651-45DB-A98B-C05A92464EB8} = {55F06B7A-AE88-4DC5-991C-FF4C39FA15E0}
+		{59609EA6-929A-4783-A3E0-8EA63091AC61} = {FA9D4AF2-4DEA-4A93-8568-8B73DBDEEB58}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FD82ABF3-B5E6-49B7-874D-4E047F793A61}
