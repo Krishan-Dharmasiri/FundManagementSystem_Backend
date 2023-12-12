@@ -15,4 +15,8 @@
     <ProjectReference Include="..\FundManagementSystem.Application\FundManagementSystem.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="FileExport\" />
+  </ItemGroup>
+
 </Project>

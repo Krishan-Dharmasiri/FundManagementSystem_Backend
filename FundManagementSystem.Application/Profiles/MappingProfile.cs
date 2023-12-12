@@ -22,6 +22,7 @@ namespace FundManagementSystem.Application.Profiles
             CreateMap<Portfolio, CreatePortfolioCommand>().ReverseMap();
             CreateMap<Portfolio, UpdatePortfolioCommand>().ReverseMap();
             CreateMap<Portfolio, DeletePortfolioCommand>().ReverseMap();
+            CreateMap<Portfolio, CreatePortfolioDto>().ReverseMap();
 
             CreateMap<Client, ClientDto>().ReverseMap();
         }
