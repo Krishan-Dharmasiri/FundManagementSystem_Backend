@@ -1,7 +1,9 @@
 using FundManagementSystem.Api.Middleware;
 using FundManagementSystem.Application;
+using FundManagementSystem.Identity;
 using FundManagementSystem.Infrastructure;
 using FundManagementSystem.Persistence;
+using Microsoft.AspNetCore.RateLimiting;
 using Serilog;
 
 namespace FundManagementSystem.Api
@@ -35,9 +37,25 @@ namespace FundManagementSystem.Api
                     .AllowAnyHeader().AllowAnyMethod());
             });
 
+            builder.Services.AddRateLimiter(_ => _.AddFixedWindowLimiter(policyName: "fixed_rate_limiter", options =>
+            {
+                options.PermitLimit = 6;
+                options.Window = TimeSpan.FromSeconds(10);
+                options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+                options.QueueLimit = 2;
+            }));
+
+            builder.Services.AddRateLimiter(_ => _.AddConcurrencyLimiter(policyName: "concurrency_rate_limiter", options =>
+            {
+                options.PermitLimit = 4;
+                options.QueueProcessingOrder = System.Threading.RateLimiting.QueueProcessingOrder.OldestFirst;
+                options.QueueLimit = 2;
+            }));
+
             builder.Services.AddApplicationServices();
             builder.Services.AddInfrastructureServices(builder.Configuration);
             builder.Services.AddPersistenceServices(builder.Configuration);
+            //builder.Services.AddIdentityServices(builder.Configuration);
 
             var app = builder.Build();
 
@@ -49,6 +67,8 @@ namespace FundManagementSystem.Api
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             // Custom Middleware for exception handling
             app.UseCustomExceptionHandler();

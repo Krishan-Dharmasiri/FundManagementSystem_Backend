@@ -3,6 +3,7 @@ using FundManagementSystem.Application.Features.Portfolios.Queries.GetPortfolios
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace FundManagementSystem.Api.Controllers
 {
@@ -19,6 +20,7 @@ namespace FundManagementSystem.Api.Controllers
 
         [HttpGet(Name = "GetAllPortfolios")]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        [EnableRateLimiting("concurrency_rate_limiter")]
         public async Task<ActionResult<List<PortfolioListDto>>> GetAllPortfolios()
         {
             var result = await _mediator.Send(new GetPortfoliosListQuery());
@@ -27,6 +29,7 @@ namespace FundManagementSystem.Api.Controllers
         }
 
         [HttpPost(Name = "AddPortfolio")]
+        [EnableRateLimiting("fixed_rate_limiter")]
         public async Task<ActionResult<CreatePortfolioCommandResponse>> Create([FromBody] CreatePortfolioCommand
             createPortfolioCommand)
         {

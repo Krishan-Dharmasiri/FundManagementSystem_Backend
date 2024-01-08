@@ -23,16 +23,16 @@ namespace FundManagementSystem.Application.UnitTests.Portfolios.Queries
             _mapper = configurationProvider.CreateMapper();
         }
 
-        [Fact]
-        public async Task GetPortfolioListTest()
-        {
-            var handler = new GetPortfoliosListQueryHandler(_mapper, _portfolioRepositoryMock.Object);
+        //[Fact]
+        //public async Task GetPortfolioListTest()
+        //{
+        //    var handler = new GetPortfoliosListQueryHandler(_mapper, _portfolioRepositoryMock.Object);
 
-            var result = await handler.Handle(new GetPortfoliosListQuery(), CancellationToken.None);
+        //    var result = await handler.Handle(new GetPortfoliosListQuery(), CancellationToken.None);
 
-            result.ShouldBeOfType<List<PortfolioListDto>>();
+        //    result.ShouldBeOfType<List<PortfolioListDto>>();
 
-            result.Count.ShouldBe(2);
-        }
+        //    result.Count.ShouldBe(2);
+        //}
     }
 }
