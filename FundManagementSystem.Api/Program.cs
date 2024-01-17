@@ -59,6 +59,11 @@ namespace FundManagementSystem.Api
 
             var app = builder.Build();
 
+            /*
+             * Using API Key to protect the controllers
+             */
+            //app.UseApiKey();
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
